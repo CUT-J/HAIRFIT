@@ -210,7 +210,7 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
 }
 
 .social:hover {
-    background: #333;
+    background: whitesmoke;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
