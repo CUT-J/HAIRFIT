@@ -85,6 +85,30 @@ body {
 .copy.done { background: #718d79; }
 .note { display: block; min-height: 20px; font-size: 11px; color: var(--pink); }
 
+/* style.css の末尾などに追加 */
+.btn-chatgpt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 10px 22px;
+  background-color: #10a37f; /* ChatGPTのテーマカラー */
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(16, 163, 127, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-chatgpt:hover {
+  background-color: #0d8c6d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(16, 163, 127, 0.35);
+}
+
 /* PANELS */
 .panel {
   background: var(--surface); border: 1px solid #eee6eb;
@@ -290,4 +314,73 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
   .hero-copy { padding: 95px 4px 20px; }
   .hero-copy h1 { font-size: clamp(42px, 12vw, 58px); letter-spacing: 3px; }
   .hero-copy h2 { font-size: 19px; }
+}
+
+/* --- 使い方ステップ --- */
+.step-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+.step-item {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  position: relative;
+}
+.step-num {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--pink);
+  background: var(--sbg);
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.step-item h3 {
+  font-size: 15px;
+  margin: 4px 0 8px;
+  color: var(--navy);
+}
+.step-item p {
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* スマホ用スタイル調整 */
+@media (max-width: 650px) {
+  .step-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* --- シェアボタン --- */
+.share-panel {
+  text-align: center;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 50px;
+  background: #000000;
+  color: #ffffff;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }

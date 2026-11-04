@@ -80,3 +80,14 @@
     womenTab.addEventListener('click', function(){ selectTierView('women'); });
     menTab.addEventListener('click', function(){ selectTierView('men'); });
   }
+
+  // Xシェア機能
+var shareBtn = document.getElementById('shareX');
+if (shareBtn) {
+  shareBtn.addEventListener('click', function() {
+    var text = encodeURIComponent("あなたに似合う髪型をAIが診断する「HAIR FIT」プロンプト✨\n髪質や顔立ちからTier表で提案してくれます！\n\n#HAIRFIT #AI髪型診断 #ChatGPT");
+    var url = encodeURIComponent(window.location.href);
+    var shareUrl = "https://x.com/intent/tweet?text=" + text + "&url=" + url;
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+  });
+}
