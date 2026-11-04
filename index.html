@@ -8,60 +8,151 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-<defs>
-<symbol id="h1" viewBox="0 0 80 80"><path d="M16 64C10 30 22 12 40 12s30 18 24 52z" fill="#4a3a38"/><path d="M12 80c2-16 16-20 28-20s26 4 28 20z" fill="#d9cfd3"/><ellipse cx="40" cy="40" rx="15" ry="19" fill="#f1d3c0"/><path d="M25 36c3-14 27-14 30 0-7-6-23-6-30 0z" fill="#4a3a38"/></symbol>
-<symbol id="h2" viewBox="0 0 80 80"><path d="M14 80C6 40 18 10 40 10s34 30 26 70z" fill="#5b4339"/><path d="M12 80c2-14 16-18 28-18s26 4 28 18z" fill="#d9cfd3"/><ellipse cx="40" cy="40" rx="14" ry="18" fill="#f1d3c0"/><path d="M40 20c-10 0-15 8-16 18 6-4 12-10 16-18 4 8 10 14 16 18-1-10-6-18-16-18z" fill="#5b4339"/></symbol>
-<symbol id="h3" viewBox="0 0 80 80"><path d="M22 42C18 18 62 18 58 42z" fill="#33292a"/><path d="M12 80c2-16 16-20 28-20s26 4 28 20z" fill="#d9cfd3"/><ellipse cx="40" cy="42" rx="15" ry="18" fill="#f1d3c0"/><path d="M24 36c0-14 32-14 32 0-4-4-10-8-16-8s-12 4-16 8z" fill="#33292a"/></symbol>
-<symbol id="h4" viewBox="0 0 80 80"><path d="M18 62c-10-6-6-14-8-22C10 20 24 10 40 10s30 10 30 30c-2 8 2 16-8 22z" fill="#6a4a3c"/><path d="M12 80c2-16 16-20 28-20s26 4 28 20z" fill="#d9cfd3"/><ellipse cx="40" cy="41" rx="14" ry="18" fill="#f1d3c0"/><path d="M26 34c4-12 24-12 28 0-6-3-9-8-14-8s-8 5-14 8z" fill="#6a4a3c"/></symbol>
-</defs>
-</svg>
 <div class="wrap">
-  <header>
-    <h1 class="mark">HAIR<span>FIT</span></h1>
-    <p class="sub">髪型診断AI 完全版プロンプト</p>
-    <p class="lead">下のボタンでプロンプトの全文をコピーして、ChatGPT や Claude などのAIチャットに貼り付けてください。</p>
-    <div class="cta">
-      <button class="copy" id="copyMain" type="button">プロンプトをコピー</button>
-      <span class="note" id="note" role="status" aria-live="polite"></span>
+  <header class="hero">
+    <nav class="nav">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M29 7c-7-3-15 1-17 8-1 4 0 7 2 10-2 3-3 7-2 11 1 4 4 6 8 6"
+                fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M28 8c7 2 11 8 10 15-1 5-4 8-8 11-2 2-3 5-2 8"
+                fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M17 18c4 3 8 4 13 3M16 27c3 2 6 3 10 3"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M10 24c-3 1-4 4-3 7 1 2 3 3 5 3"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <strong>HAIR FIT</strong>
+          <small>あなたに似合うヘアスタイルを</small>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="hero-copy">
+      <p class="catch">もっと、似合う髪型に。<br>出会える。</p>
+      <h1>HAIR FIT</h1>
+      <h2>あなたに似合う髪型を、<br>AIと見つけよう。</h2>
+      <p>髪質・顔立ち・なりたい印象から、<br>
+      あなただけの髪型を提案する<br>
+      完全版プロンプトです。</p>
+      <button class="copy" id="copyMain">▢ プロンプトをコピー</button>
+      <span id="note" class="note"></span>
     </div>
+
   </header>
 
-  <section>
-    <div class="panel">
+  <main>
+<section class="panel features">
       <h2>このプロンプトでできること</h2>
-      <p class="h2sub">髪型選びを、もっとパーソナルに。</p>
+      <p class="h2sub">髪型選びをもっと、パーソナルに。</p>
       <div class="feat">
-        <div class="ts"><b>髪型診断</b>髪質と顔立ちを考慮</div>
-        <div class="ta"><b>Tierランキング</b>候補を画像で比較</div>
-        <div class="tb"><b>美容室オーダー</b>希望を伝える文章を作成</div>
-        <div class="tc"><b>対話型カウンセリング</b>質問に答えて診断</div>
+        <div class="ts"><span>♙</span><div><b>髪型診断</b>髪質と顔立ちを考慮</div></div>
+        <div class="ta"><span>▱</span><div><b>Tierランキング</b>候補を画像で比較</div></div>
+        <div class="tb"><span>▢</span><div><b>美容室オーダー</b>希望を伝える文章を作成</div></div>
+        <div class="tc"><span>♧</span><div><b>対話型カウンセリング</b>質問に答えて診断</div></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <div class="panel">
+    <section class="panel results">
       <h2>診断結果のイメージ</h2>
       <p class="h2sub">Tier別に髪型を並べた画像で、気になる髪型を選べます。</p>
-      <div class="tier"><div class="t ts">S</div><div class="r ts"><div class="fr"><i>1</i><svg><use href="#h1"/></svg></div></div></div>
-      <div class="tier"><div class="t ta">A</div><div class="r ta"><div class="fr"><i>3</i><svg><use href="#h4"/></svg></div><div class="fr"><i>4</i><svg><use href="#h2"/></svg></div><div class="fr"><i>5</i><svg><use href="#h1"/></svg></div></div></div>
-      <div class="tier"><div class="t tb">B</div><div class="r tb"><div class="fr"><i>6</i><svg><use href="#h3"/></svg></div><div class="fr"><i>7</i><svg><use href="#h4"/></svg></div></div></div>
-      <div class="tier"><div class="t tc">C</div><div class="r tc"><div class="fr"><i>8</i><svg><use href="#h2"/></svg></div></div></div>
-      <p class="cap">イメージ図です。実際の診断では、あなたに合わせた髪型の画像が表示されます。</p>
-    </div>
-  </section>
+      <div class="tier-tabs" role="tablist" aria-label="髪型ランキングの性別切り替え">
+        <button class="tier-tab active" id="womenTab" type="button" role="tab" aria-selected="true" aria-controls="womenTiers">女性用</button>
+        <button class="tier-tab" id="menTab" type="button" role="tab" aria-selected="false" aria-controls="menTiers">男性用</button>
+      </div>
 
-  <section>
-    <div class="card" id="card">
-      <div class="bar"><b>プロンプト全文</b><button class="copy" id="copySub" type="button">コピー</button></div>
-      <pre id="view"></pre>
-      <div class="fade"></div>
-      <button class="toggle" id="toggle" type="button" aria-expanded="false">全文を表示する</button>
+      <div class="tier-view" id="womenTiers" role="tabpanel" aria-labelledby="womenTab">
+      <div class="tier">
+        <div class="t ts">S</div>
+        <div class="r ts">
+          <div class="fr"><i>1</i><img src="images/women1.png" alt="髪型候補 1"></div>
+        </div>
+      </div>
+      <div class="tier">
+        <div class="t ta">A</div>
+        <div class="r ta">
+          <div class="fr"><i>2</i><img src="images/women2.png" alt="髪型候補 2"></div>
+          <div class="fr"><i>3</i><img src="images/women3.png" alt="髪型候補 3"></div>
+          <div class="fr"><i>4</i><img src="images/women4.png" alt="髪型候補 4"></div>
+        </div>
+      </div>
+      <div class="tier">
+        <div class="t tb">B</div>
+        <div class="r tb">
+          <div class="fr"><i>5</i><img src="images/women5.png" alt="髪型候補 5"></div>
+          <div class="fr"><i>6</i><img src="images/women6.png" alt="髪型候補 6"></div>
+        </div>
+      </div>
+      <div class="tier">
+        <div class="t tc">C</div>
+        <div class="r tc">
+          <div class="fr"><i>7</i><img src="images/women7.png" alt="髪型候補 7"></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="tier-view" id="menTiers" role="tabpanel" aria-labelledby="menTab" hidden>
+        <div class="tier">
+          <div class="t ts">S</div>
+          <div class="r ts"><div class="fr"><i>1</i><img src="images/men1.png" alt="男性用髪型候補 1"></div></div>
+        </div>
+        <div class="tier">
+          <div class="t ta">A</div>
+          <div class="r ta">
+            <div class="fr"><i>2</i><img src="images/men2.png" alt="男性用髪型候補 2"></div>
+            <div class="fr"><i>3</i><img src="images/men3.png" alt="男性用髪型候補 3"></div>
+            <div class="fr"><i>4</i><img src="images/men4.png" alt="男性用髪型候補 4"></div>
+          </div>
+        </div>
+        <div class="tier">
+          <div class="t tb">B</div>
+          <div class="r tb">
+            <div class="fr"><i>5</i><img src="images/men5.png" alt="男性用髪型候補 5"></div>
+            <div class="fr"><i>6</i><img src="images/men6.png" alt="男性用髪型候補 6"></div>
+          </div>
+        </div>
+        <div class="tier">
+          <div class="t tc">C</div>
+          <div class="r tc"><div class="fr"><i>7</i><img src="images/men7.png" alt="男性用髪型候補 7"></div></div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="panel prompt-panel">
+      <div class="prompt-heading">
+        <span class="code-icon">&lt;/&gt;</span>
+        <div>
+          <h2>プロンプト本文</h2>
+          <p>長いプロンプト全文を、コピーしてすぐに使えます。</p>
+        </div>
+      </div>
+      <div class="prompt-card" id="card">
+        <pre id="view"></pre>
+        <div class="fade"></div>
+        <button class="toggle" id="toggle" aria-expanded="false">
+          全文を表示する
+        </button>
+      </div>
+      <button class="copy copy-wide" id="copySub">▢ プロンプトをコピー</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="creator">
+      <div class="creator-avatar">HF</div>
+      <div>
+        <strong>CREATOR</strong>
+        <p>髪型の可能性を、もっと多くの人に。<br>
+        美容とAIを組み合わせたコンテンツを作っています。</p>
+      </div>
     </div>
-  </section>
-  <footer>HAIR FIT</footer>
+    <span class="social">𝕏　(Twitter) ↗</span>
+  </footer>
 </div>
+
 
 <script type="text/plain" id="prompt">HAIR FIT｜髪型診断AI 完全版プロンプト
 
