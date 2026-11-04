@@ -228,6 +228,11 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
     font-size: 18px;
 }
 
+.chatarrow {
+    color: white;
+    font-size: 14px;
+}
+
 .arrow {
     color: #999999;
     font-size: 14px;
