@@ -495,3 +495,26 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
   box-shadow: 0 5px 15px #d85b7d35;
 }
 .share-note { display: block; min-height: 20px; margin-top: 10px; font-size: 11px; color: var(--pink); }
+
+/* ボタンの質感調整（落ち着いた配色） */
+.copy {
+  background: var(--navy);
+  box-shadow: 0 2px 6px #19283e22;
+  letter-spacing: .08em;
+}
+.copy:hover { background: #243754; transform: translateY(-1px); box-shadow: 0 4px 10px #19283e30; }
+.copy.done { background: #5f7a68; }
+
+.btn-chatgpt {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid #cfd3dc;
+  box-shadow: none;
+}
+.btn-chatgpt:hover { background: #ffffff; border-color: var(--navy); box-shadow: none; transform: none; }
+.btn-chatgpt .chatarrow { color: var(--navy); }
+
+.share-panel .share-btn {
+  background: var(--navy);
+  box-shadow: 0 2px 6px #19283e22;
+}
