@@ -81,13 +81,56 @@
     menTab.addEventListener('click', function(){ selectTierView('men'); });
   }
 
-  // Xシェア機能
-var shareBtn = document.getElementById('shareX');
-if (shareBtn) {
-  shareBtn.addEventListener('click', function() {
-    var text = encodeURIComponent("あなたに似合う髪型をAIが診断する「HAIR FIT」プロンプト✨\n髪質や顔立ちからTier表で提案してくれます！\n\n#HAIRFIT #AI髪型診断 #ChatGPT");
-    var url = encodeURIComponent(window.location.href);
-    var shareUrl = "https://x.com/intent/tweet?text=" + text + "&url=" + url;
-    window.open(shareUrl, '_blank', 'width=600,height=400');
+// シェア機能（端末の共有メニューを開く）
+(function () {
+  var btn = document.getElementById('shareBtn');
+  if (!btn) return;
+  var note = document.getElementById('shareNote');
+  var pageUrl = location.href.split('#')[0];
+  var shareData = {
+    title: 'HAIR FIT',
+    text: 'あなたに似合う髪型をAIが診断する「HAIR FIT」プロンプト✨\n髪質や顔立ちからTier表で提案してくれます！\n#HAIRFIT #AI髪型診断 #ChatGPT',
+    url: pageUrl
+  };
+  var timer;
+
+  function say(msg) {
+    clearTimeout(timer);
+    note.textContent = msg;
+    timer = setTimeout(function () { note.textContent = ''; }, 3500);
+  }
+
+  function fallbackCopy() {
+    var ta = document.createElement('textarea');
+    ta.value = pageUrl;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function copyLink() {
+    function done(ok) {
+      say(ok ? 'リンクをコピーしました。好きなアプリに貼り付けてください。' : 'コピーできませんでした。');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(pageUrl).then(function () { done(true); }, function () { done(fallbackCopy()); });
+    } else {
+      done(fallbackCopy());
+    }
+  }
+
+  btn.addEventListener('click', function () {
+    if (navigator.share) {
+      navigator.share(shareData).catch(function (err) {
+        if (err && err.name !== 'AbortError') copyLink();
+      });
+    } else {
+      copyLink();
+    }
   });
-}
+})();

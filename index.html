@@ -37,13 +37,21 @@
       <p>髪質・顔立ち・なりたい印象から、<br>
       あなただけの髪型を提案する<br>
       完全版プロンプトです。</p>
-      <button class="copy" id="copyMain">▢ プロンプトをコピー</button><br>
+            <div class="hp-label"><span>HAIR FITでできること</span></div>
+      <ul class="hero-points">
+        <li style="--ico:var(--sbg);--icf:var(--sfg)"><span class="hp-ico"><i data-lucide="scan-face"></i></span><span class="hp-txt"><b>髪質まで見極める</b><small>毛量・クセも考慮</small></span></li>
+        <li style="--ico:var(--abg);--icf:var(--afg)"><span class="hp-ico"><i data-lucide="trophy"></i></span><span class="hp-txt"><b>似合う順に比べる</b><small>Tier表で一目瞭然</small></span></li>
+        <li style="--ico:var(--bbg);--icf:var(--bfg)"><span class="hp-ico"><i data-lucide="scissors"></i></span><span class="hp-txt"><b>そのまま伝わる</b><small>美容師へのオーダー文つき</small></span></li>
+        <li style="--ico:var(--cbg);--icf:var(--cfg)"><span class="hp-ico"><i data-lucide="messages-square"></i></span><span class="hp-txt"><b>選ぶだけで診断</b><small>質問はタップで回答</small></span></li>
+      </ul>
+      <button class="copy" id="copyMain">プロンプトをコピー</button><br>
       <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="btn-chatgpt">
-        ChatGPTを開く <span class="chatarrow">↗</span>
+       ChatGPTを開く <svg class="chatarrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
       </a>
       <p>このプロンプトはChatGPT推奨です。</p>
       <span id="note" class="note"></span>
     </div>
+
 
   </header>
 
@@ -169,10 +177,8 @@
     <section class="panel share-panel">
       <h2>このプロンプトをシェアする</h2>
       <p class="h2sub">髪型に悩んでいる友達やフォロワーに教えてあげよう</p>
-      <button class="share-btn" id="shareX">
-        <span class="x-icon">𝕏</span>
-        <span>Xでポストして教える</span>
-      </button>
+      <button class="share-btn" id="shareBtn" type="button">シェアする</button>
+      <span class="share-note" id="shareNote" role="status" aria-live="polite"></span>
     </section>
   </main>
 
@@ -183,8 +189,8 @@
       </div>
       <div>
         <strong>CUT純/HIROTO</strong>
-        <p>髪型の可能性を、もっと多くの人に。<br>
-        美容とAIを組み合わせたコンテンツを作っています。</p>
+        <p>悩んでいる方、よくわからない方の<br>
+          第一歩になれば幸いです。</p>
       </div>
     </div>
     <a href="https://x.com/hiroto_cutj" class="social" target="_blank">
