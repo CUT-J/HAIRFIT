@@ -518,3 +518,42 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
   background: var(--navy);
   box-shadow: 0 2px 6px #19283e22;
 }
+
+/* 免責 */
+.disclaimer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 18px 8px 40px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.9;
+  color: #6a7080;
+}
+
+/* 灰色の小さい文字を濃くして読みやすく */
+:root { --muted: #4a5468; }
+
+.h2sub,
+.step-item p,
+.tier-note,
+.prompt-heading p,
+.creator p,
+.brand small,
+.feat > div,
+.hero-points li,
+.hero-points small,
+.disclaimer,
+.tier-tab,
+.male-placeholder { color: var(--muted); }
+
+/* 小さすぎる文字を少しだけ大きく */
+.tier-note,
+.creator p,
+.disclaimer { font-size: 12px; }
+.brand small { font-size: 11px; }
+.hero-points small { font-size: 12px; }
+
+@media (max-width: 650px) {
+  .hero-points small { font-size: 11px; }
+}
