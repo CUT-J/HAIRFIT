@@ -115,12 +115,6 @@ function selectTierView(viewName) {
   womenTab.setAttribute('aria-selected', String(showWomen));
   menTab.setAttribute('aria-selected', String(!showWomen));
 
-  // GA4：Tier表の切り替え
-  if (typeof gtag === 'function') {
-    gtag('event', 'tier_tab_switch', {
-      selected_view: viewName
-    });
-  }
 }
 
 if (womenTab && menTab) {
@@ -207,5 +201,29 @@ if (womenTab && menTab) {
     } else {
       copyLink();
     }
+  });
+})();
+
+// GA4：ChatGPTを開くリンクのクリック計測
+(function () {
+  var chatgptLink = document.getElementById('chatgptLink');
+
+  if (!chatgptLink) return;
+
+  chatgptLink.addEventListener('click', function (e) {
+    if (typeof gtag !== 'function') return;
+
+    e.preventDefault();
+
+    var url = chatgptLink.href;
+
+    gtag('event', 'chatgpt_open', {
+      link_url: url,
+      event_callback: function () {
+        window.open(url, '_blank', 'noopener');
+      },
+      event_timeout: 1500
+    });
+
   });
 })();
