@@ -210,20 +210,12 @@ if (womenTab && menTab) {
 
   if (!chatgptLink) return;
 
-  chatgptLink.addEventListener('click', function (e) {
-    if (typeof gtag !== 'function') return;
-
-    e.preventDefault();
-
-    var url = chatgptLink.href;
-
-    gtag('event', 'chatgpt_open', {
-      link_url: url,
-      event_callback: function () {
-        window.open(url, '_blank', 'noopener');
-      },
-      event_timeout: 1500
-    });
-
+  chatgptLink.addEventListener('click', function () {
+    if (typeof gtag === 'function') {
+      gtag('event', 'chatgpt_open', {
+        link_url: chatgptLink.href,
+        transport_type: 'beacon'
+      });
+    }
   });
 })();
